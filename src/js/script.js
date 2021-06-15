@@ -3,7 +3,7 @@ import Module from './module';
 // ページの読み込みを待つ
 window.addEventListener('load', init);
 
-const module = new Module();
+let module = new Module();
 
 function init() {
 	let speed = 0;
