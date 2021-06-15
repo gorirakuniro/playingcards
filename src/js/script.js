@@ -1,6 +1,3 @@
-import * as THREE from 'three';
-import gsap from 'gsap';
-
 import Module from './module';
 
 // ページの読み込みを待つ
@@ -15,7 +12,6 @@ function init() {
 
 	window.addEventListener('wheel', (e) => {
 		speed += e.deltaY * 0.0003;
-		// console.log(e.deltaY);
 	});
 
 	raf();
@@ -28,32 +24,33 @@ function init() {
 		let diff = rounded - position;
 		position += Math.sign(diff) * Math.pow(Math.abs(diff), 0.7) * 0.015;
 
-		module.rendererDOM.addEventListener(
-			'mousemove',
-			module.handleMouseMove
-		);
+		if (position > 2) {
+			position = -2;
+		}
+		if (position < -2) {
+			position = 2;
+		}
 
-		// module.rendererDOM.addEventListener('mousemove', MouseMove);
+		module.rendererDOM.addEventListener('mousemove', handleMouseMove);
 
 		module.mesh.position.x = -position * 100;
+
 		window.requestAnimationFrame(raf);
 	}
 
-	// function MouseMove(event) {
-	// 	const element = event.currentTarget;
-	// 	// canvas要素上のXY座標
-	// 	const x = event.clientX - element.offsetLeft;
-	// 	const y = event.clientY - element.offsetTop;
-	// 	// canvas要素の幅・高さ
-	// 	const w = element.offsetWidth;
-	// 	const h = element.offsetHeight;
+	function handleMouseMove(event) {
+		let element = event.currentTarget;
+		// canvas要素上のXY座標
+		let x = event.clientX - element.offsetLeft;
+		let y = event.clientY - element.offsetTop;
+		// canvas要素の幅・高さ
+		let w = element.offsetWidth;
+		let h = element.offsetHeight;
 
-	// 	// -1〜+1の範囲で現在のマウス座標を登録する
-	// 	module.mouse.x = (x / w) * 2 - 1;
-	// 	module.mouse.y = -(y / h) * 2 + 1;
-
-	// 	console.log(module.mouse.x, module.mouse.y);
-	// }
+		// -1〜+1の範囲で現在のマウス座標を登録する
+		module.mouse.x = (x / w) * 2 - 1;
+		module.mouse.y = -(y / h) * 2 + 1;
+	}
 
 	// 毎フレーム時に実行されるループイベントです
 	function tick() {

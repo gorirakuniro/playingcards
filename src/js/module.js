@@ -32,26 +32,7 @@ export default class Module {
 
 		this.mesh = new THREE.Mesh(this.geometry, this.material);
 
-		// this.rendererDOM.addEventListener('mousemove', this.handleMouseMove);
-
 		this.scene.add(this.mesh);
-	}
-
-	handleMouseMove(event) {
-		// マウス座標管理用のベクトルを作成
-		this.mouse = new THREE.Vector2();
-
-		this.element = event.currentTarget;
-		// canvas要素上のXY座標
-		this.x = event.clientX - this.element.offsetLeft;
-		this.y = event.clientY - this.element.offsetTop;
-		// canvas要素の幅・高さ
-		this.w = this.element.offsetWidth;
-		this.h = this.element.offsetHeight;
-
-		// -1〜+1の範囲で現在のマウス座標を登録する
-		this.mouse.x = (this.x / this.w) * 2 - 1;
-		this.mouse.y = -(this.y / this.h) * 2 + 1;
 	}
 
 	// 毎フレーム時に実行されるループイベントです
@@ -64,10 +45,7 @@ export default class Module {
 		// その光線とぶつかったオブジェクトを得る
 		this.intersects = this.raycaster.intersectObjects(this.scene.children);
 
-		if (
-			this.intersects.length > 0 &&
-			this.mesh === this.intersects[0].object
-		) {
+		if (this.intersects.length > 0 && this.mesh === this.intersects[0].object) {
 			// 移動する
 			gsap.to(this.mesh.rotation, 0.5, {
 				x: -this.mouse.y * 0.3,
@@ -78,3 +56,14 @@ export default class Module {
 		}
 	}
 }
+
+// $(function () {
+// 	$('body').height($(window).height() + 2000);
+// 	$(window).scroll(function () {
+// 		if ($(window).scrollTop() >= $('body').height() - $(window).height()) {
+// 			$(window).scrollTop(1);
+// 		} else if ($(window).scrollTop() == 0) {
+// 			$(window).scrollTop($('body').height() - $(window).height() - 1);
+// 		}
+// 	});
+// });

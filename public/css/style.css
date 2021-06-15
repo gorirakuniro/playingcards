@@ -1,7 +1,14 @@
-body {
+@charset "UTF-8";
+html, body {
   margin: 0;
   padding: 0;
-  height: 1000vh;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+body::-webkit-scrollbar {
+  /* Chrome, Safari 対応 */
+  display: none;
 }
 
 canvas {
