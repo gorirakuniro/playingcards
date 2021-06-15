@@ -3,9 +3,9 @@ import Module from './module';
 // ページの読み込みを待つ
 window.addEventListener('load', init);
 
-let module = new Module();
-
 function init() {
+	let module = new Module();
+
 	let speed = 0;
 	let position = 0;
 	let rounded = 0;
@@ -24,6 +24,7 @@ function init() {
 		let diff = rounded - position;
 		position += Math.sign(diff) * Math.pow(Math.abs(diff), 0.7) * 0.015;
 
+		// 無限にスクロールする。
 		if (position > 2) {
 			position = -2;
 		}
@@ -33,6 +34,12 @@ function init() {
 
 		module.rendererDOM.addEventListener('mousemove', handleMouseMove);
 
+		console.log(module.modulemesh01);
+
+		module.modulemesh01.mesh.position.x = -position * 100;
+		module.modulemesh02.mesh.position.x = -position * 100 - 100;
+		module.modulemesh03.mesh.position.x = -position * 100 - 200;
+		module.modulemesh04.mesh.position.x = -position * 100 - 300;
 		module.mesh.position.x = -position * 100;
 
 		window.requestAnimationFrame(raf);
