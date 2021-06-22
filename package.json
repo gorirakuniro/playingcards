@@ -10,8 +10,10 @@
     "watch": "webpack --watch"
   },
   "dependencies": {
+    "circletype": "^2.3.0",
     "gsap": "^3.6.1",
     "three": "^0.129.0",
+    "three-gltf-loader": "^1.111.0",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0"
   },

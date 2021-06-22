@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-950.169,-2719.95)">
+        <g id="アートボード1" transform="matrix(1,0,0,1,950.169,2719.95)">
+            <rect x="0" y="0" width="400" height="400" style="fill:none;"/>
+            <g transform="matrix(0.61767,0,0,0.61767,115.631,76.2289)">
+                <g transform="matrix(0.363561,0,0,0.363561,-110.883,-224.932)">
+                    <path d="M793.239,1024.37C793.239,1010.31 781.841,998.908 767.78,998.908C724.466,998.908 636.931,998.908 593.617,998.908C579.556,998.908 568.158,1010.31 568.158,1024.37C568.158,1087.74 568.158,1251.99 568.158,1315.36C568.158,1329.41 579.556,1340.81 593.617,1340.81C636.931,1340.81 724.466,1340.81 767.78,1340.81C781.841,1340.81 793.239,1329.41 793.239,1315.36C793.239,1251.99 793.239,1087.74 793.239,1024.37Z" style="fill:none;stroke:black;stroke-width:5.57px;"/>
+                </g>
+                <g transform="matrix(0.168346,0,0,0.168346,102.924,168.213)">
+                    <path d="M200,295.202C200,295.202 155.907,296.055 162.596,295.202C177.321,293.324 194.938,272.006 194.938,243.484C165.856,299.737 80.915,262.938 102.059,200C116.048,158.361 192.027,123.957 200,86.7C200.024,86.586 199.976,86.586 200,86.7C207.973,123.957 283.952,158.361 297.941,200C319.085,262.938 234.144,299.737 205.062,243.484C205.062,272.006 222.679,293.324 237.404,295.202C244.093,296.055 200,295.202 200,295.202Z"/>
+                </g>
+                <g transform="matrix(0.363561,0,0,0.363561,-115.413,-209.815)">
+                    <text x="603.28px" y="1019.03px" style="font-family:'HelveticaNeue-UltraLight', 'Helvetica Neue';font-weight:100;font-size:50px;">A</text>
+                </g>
+                <g transform="matrix(0.363561,0,0,0.363561,-59.197,-113.868)">
+                    <text x="603.28px" y="1019.03px" style="font-family:'HelveticaNeue-UltraLight', 'Helvetica Neue';font-weight:100;font-size:50px;">A</text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
