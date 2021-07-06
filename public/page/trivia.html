@@ -4,15 +4,15 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="shortcut icon" href="./image/icon.svg" />
 		<title>Playingcards</title>
-		<link rel="stylesheet" href="css/style.css" />
+
+		<link rel="stylesheet" href="../css/sub.css" />
 	</head>
 	<body>
 		<div class="container">
 			<header class="header">
 				<div class="header__logo">
-					<a class="title" href="./index.html">
+					<a class="title" href="../index.html">
 						<svg width="100%" height="100%" viewBox="0 0 260 99" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule: evenodd; clip-rule: evenodd; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 1.5">
 							<g transform="matrix(1,0,0,1,-126.653,-2876.73)">
 								<g transform="matrix(0.648332,0,0,0.247221,126.653,2876.73)">
@@ -48,46 +48,78 @@
 				<div class="header__nav">
 					<ul class="header_navlist">
 						<li class="header_navlist-li">
-							<a href="./page/what.html" class="header_navlist-li-link">♣︎What</a>
+							<a href="./what.html" class="header_navlist-li-link">♣︎What</a>
 						</li>
 						<li class="header_navlist-li">
-							<a href="./page/origin.html" class="header_navlist-li-link">❤︎Origin</a>
+							<a href="./origin.html" class="header_navlist-li-link">❤︎Origin</a>
 						</li>
 						<li class="header_navlist-li">
-							<a href="./page/design.html" class="header_navlist-li-link">♠︎Design</a>
+							<a href="./design.html" class="header_navlist-li-link">♠︎Design</a>
 						</li>
 						<li class="header_navlist-li">
-							<a href="./page/trivia.html" class="header_navlist-li-link">♦︎Trivia</a>
+							<a href="./trivia.html" class="header_navlist-li-link">♦︎Trivia</a>
 						</li>
 					</ul>
 				</div>
 			</header>
-
-			<div class="circleText">How much do you know about playing cards?</div>
-
-			<div class="globalnav">
-				<div class="nav">
-					<a href="./page/trivia.html" class="nav-item club">
-						<div class="nav-item-text">Trivia</div>
-					</a>
-					<a href="./page/design.html" class="nav-item diamond">
-						<div class="nav-item-text">Design</div>
-					</a>
-					<a href="./page/origin.html" class="nav-item spade">
-						<div class="nav-item-text">Origin</div>
-					</a>
-					<a href="./page/what.html" class="nav-item heart">
-						<div class="nav-item-text">What</div>
-					</a>
+		</div>
+		<div class="trivia">
+			<div class="trivia__title listtitle">
+				<div class="trivia__title__item listtitle__item">
+					<div class="trivia__title__item--text listtitle__text">Trivia</div>
+					<div class="trivia__title__item--sub listtitle__sub">雑学</div>
 				</div>
 			</div>
-		</div>
+			<div class="trivia__list--item">
+				<div class="trivia__list--item--title">スペードは死の象徴</div>
+				<div class="trivia__list--text">
+					スペードには死の象徴でもあります。<br />
+					スペードの３人のモデルは<br />
+					ジャック：オジェ・ル・ダノワ（カール大帝の騎士）<br />
+					クイーン：バラス・アテナ（ギリシャ神話の戦いの 女神）<br />
+					キング：ダビデ王（古代イスラエル国王）
+				</div>
+				<img class="trivia__list--img" src="../image/spadejqk.png" alt="" />
+			</div>
+			<div class="trivia__list--item">
+				<div class="trivia__list--item--title">ハートは愛の象徴</div>
+				<div class="trivia__list--text">
+					ハートは愛の象徴でもあります。<br />
+					ハートの３人のモデルは<br />
+					ジャック：ラ・イル（ジャンヌ・ダルクの戦友）<br />
+					クイーン：ユディト（ユダヤの女戦士またはカール大帝の子の妻）<br />
+					キング：カール大帝（フランク国王）
+				</div>
+				<img class="trivia__list--img" src="../image/heartjqk.png" alt="" />
+			</div>
+			<div class="trivia__list--item">
+				<div class="trivia__list--item--title">ダイヤはお金の象徴</div>
+				<div class="trivia__list--text">
+					ダイヤはお金の象徴です。<br />
 
-		<div id="js_loading" class="loading">
-			<img class="loading__img" src="./image/loading.png" alt="" />
-			<p class="loading__text">Loading</p>
-		</div>
+					ダイヤの３人のモデルは<br />
+					ジャック：ヘクトル（トロイの王子）<br />
+					クイーン：ラケル（旧約聖書のヤコブの妻）<br />
+					キング：カエサル（古代ローマの軍人・政治家）
+				</div>
+				<img class="trivia__list--img" src="../image/diamondjqk.png" alt="" />
+			</div>
+			<div class="trivia__list--item">
+				<div class="trivia__list--item--title">クラブは知恵の象徴</div>
+				<div class="trivia__list--text">
+					クラブは知恵の象徴です。<br />
+					クラブの３人のモデルは<br />
+					ジャック：ランスロット（アーサー王に仕えた円卓の騎士の1人）<br />
+					クイーン：アルジーヌ（シャルル7世の妻・アンジュー公女マリーまたは愛人のアニュ・ソレル）<br />
+					キング：アレキサンダー大王（マケドニア国王）
+				</div>
+				<img class="trivia__list--img" src="../image/clubjqk.png" alt="" />
+			</div>
 
-		<script src="js/script.js"></script>
+			<footer class="footer">
+				<p class="footer__text">引用元</p>
+				<p class="footer__item">https://en.wikipedia.org/wiki/Playing_card</p>
+			</footer>
+		</div>
 	</body>
 </html>

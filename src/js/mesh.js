@@ -1,20 +1,16 @@
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 export default class Mesh {
-	constructor() {
+	constructor(imgurl) {
 		this.loader = new THREE.TextureLoader();
+
+		// ?
+		console.log(imgurl);
 
 		this.geometry = new THREE.PlaneBufferGeometry(50, 80);
 		this.material = new THREE.MeshBasicMaterial({
-			map: this.loader.load('./image/image.png'),
+			map: this.loader.load(`${imgurl}`),
 		});
-
-		// this.gltfloader = new THREE.GLTFLoader();
-		// this.url = './model/hurt.glb';
-		// this.model = null;
-		// console.log(this.gltfloader);
-		// this.gltfloader.load();
 
 		// this.geometry = new THREE.TorusGeometry(30, 10, 6, 10);
 		// this.material = new THREE.MeshBasicMaterial({ color: 0x6699ff });

@@ -1,4 +1,9 @@
 @charset "UTF-8";
+@font-face {
+  font-family: 'NewYork';
+  src: url(../font/NewYork.ttf);
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -9,6 +14,10 @@ html, body {
 body::-webkit-scrollbar {
   /* Chrome, Safari 対応 */
   display: none;
+}
+
+a {
+  cursor: pointer;
 }
 
 canvas {
@@ -47,6 +56,13 @@ canvas {
           box-sizing: border-box;
 }
 
+@media screen and (max-width: 1800px) {
+  .container .header .header__logo {
+    width: 20%;
+    padding: 15px 0;
+  }
+}
+
 .container .header .header__logo .title {
   width: 100%;
   height: 100%;
@@ -55,6 +71,19 @@ canvas {
 .container .header .header__nav {
   width: 30%;
   height: 100%;
+  display: block;
+}
+
+@media screen and (max-width: 500px) {
+  .container .header .header__nav {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container .header .header__nav {
+    width: 40%;
+  }
 }
 
 .container .header .header__nav .header_navlist {
@@ -78,8 +107,15 @@ canvas {
   list-style: none;
 }
 
+@media screen and (max-width: 1800px) {
+  .container .header .header__nav .header_navlist {
+    width: 80%;
+  }
+}
+
 .container .header .header__nav .header_navlist-li-link {
   text-decoration: none;
+  color: #000;
 }
 
 .container .circleText {
@@ -94,6 +130,13 @@ canvas {
   left: 50%;
 }
 
+@media screen and (max-width: 1800px) {
+  .container .circleText {
+    -webkit-transform: translate(-50%, -50%) scale(1.3) rotate(0deg);
+            transform: translate(-50%, -50%) scale(1.3) rotate(0deg);
+  }
+}
+
 .container .globalnav {
   width: 100%;
   height: 100vh;
@@ -102,6 +145,14 @@ canvas {
 .container .globalnav .nav {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .container .globalnav .nav .nav-item {
@@ -109,8 +160,69 @@ canvas {
   width: 20%;
   height: 60vh;
   margin: 0 calc((100% - 20%)/2);
+  position: relative;
+  top: 40%;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 500px) {
+  .container .globalnav .nav .nav-item {
+    width: 60%;
+    margin: 0 calc((100% - 60%)/2);
+  }
+}
+
+.container .globalnav .nav .nav-item .nav-item-text {
   position: absolute;
-  top: 50%;
-  left: 0;
+  bottom: -5%;
+  right: -20%;
+  font-size: 8rem;
+  font-family: "NewYork";
+  color: #000;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 1800px) {
+  .container .globalnav .nav .nav-item .nav-item-text {
+    font-size: 5rem;
+  }
+}
+
+.loading {
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  position: fixed;
+  z-index: 99;
+  -webkit-transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loading .loading__img {
+  width: 100px;
+  height: 100px;
+  -webkit-transform: rotate3d(0, 0, 0);
+          transform: rotate3d(0, 0, 0);
+}
+
+.loading .loading__text {
+  opacity: 1;
+  -webkit-transform: translate(0px, 0);
+          transform: translate(0px, 0);
+  font-family: "NewYork";
+  margin: 0;
 }
 /*# sourceMappingURL=style.css.map */

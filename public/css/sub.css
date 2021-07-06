@@ -1,0 +1,533 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'NewYork';
+  src: url(../font/NewYork.ttf);
+}
+
+body, html {
+  margin: 0;
+}
+
+body::-webkit-scrollbar {
+  /* Chrome, Safari 対応 */
+  display: none;
+}
+
+a {
+  cursor: pointer;
+}
+
+.container {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+.container .header {
+  width: 100%;
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .header .header__logo {
+  width: 10%;
+  height: 100%;
+  margin: 0 5%;
+  padding: 30px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media screen and (max-width: 1800px) {
+  .container .header .header__logo {
+    width: 20%;
+    padding: 15px 0;
+  }
+}
+
+.container .header .header__logo .title {
+  width: 100%;
+  height: 100%;
+}
+
+.container .header .header__nav {
+  width: 30%;
+  height: 100%;
+  display: block;
+}
+
+@media screen and (max-width: 500px) {
+  .container .header .header__nav {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container .header .header__nav {
+    width: 40%;
+  }
+}
+
+.container .header .header__nav .header_navlist {
+  width: 50%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+}
+
+@media screen and (max-width: 1800px) {
+  .container .header .header__nav .header_navlist {
+    width: 80%;
+  }
+}
+
+.container .header .header__nav .header_navlist-li-link {
+  text-decoration: none;
+  color: #000;
+}
+
+.what {
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media screen and (max-width: 500px) {
+  .what {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.what .what__title {
+  width: 50%;
+  height: 20%;
+  position: relative;
+}
+
+@media screen and (max-width: 500px) {
+  .what .what__title {
+    width: 80%;
+    height: 15%;
+  }
+}
+
+.what .what__title .what__title-text {
+  font-weight: 300;
+  font-size: 8rem;
+  font-family: "NewYork";
+  margin: 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+  .what .what__title .what__title-text {
+    font-size: 5rem;
+  }
+}
+
+.what .what__item {
+  width: 50%;
+  height: 10%;
+}
+
+@media screen and (max-width: 500px) {
+  .what .what__item {
+    width: 50%;
+  }
+}
+
+.what .what__item .what__item--title {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 500px) {
+  .what .what__item .what__item--title {
+    font-size: 1rem;
+  }
+}
+
+.what .what__item .what__item--text {
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+
+@media screen and (max-width: 500px) {
+  .what .what__item .what__item--text {
+    font-size: 0.5rem;
+  }
+}
+
+.listtitle {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media screen and (max-width: 500px) {
+  .listtitle {
+    width: 90%;
+  }
+}
+
+.listtitle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background: #000;
+  z-index: -1;
+}
+
+.listtitle .listtitle__item {
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
+  background: #fff;
+  z-index: 5;
+}
+
+@media screen and (max-width: 500px) {
+  .listtitle .listtitle__item {
+    width: 60%;
+  }
+}
+
+.listtitle .listtitle__item .listtitle__text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+}
+
+@media screen and (max-width: 500px) {
+  .listtitle .listtitle__item .listtitle__text {
+    font-size: 2rem;
+  }
+}
+
+.listtitle .listtitle__item .listtitle__sub {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 500px) {
+  .listtitle .listtitle__item .listtitle__sub {
+    font-size: 1rem;
+  }
+}
+
+.game {
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 500px) {
+  .game {
+    width: 100%;
+  }
+}
+
+.game .game__list {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 500px) {
+  .game .game__list {
+    width: 90%;
+  }
+}
+
+.game .game__list .game__list--item {
+  width: 80%;
+  margin: 5% auto;
+}
+
+.game .game__list .game__list--item .game__list--item--title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+.game .game__list .game__list--item .game__list--text {
+  font-size: 0.8rem;
+  line-height: 2.5rem;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 500px) {
+  .game .game__list .game__list--item .game__list--text {
+    line-height: 2rem;
+  }
+}
+
+.game .game__list .game__list--item .game__list--image {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.origin {
+  width: 80%;
+  margin: 10% auto;
+}
+
+@media screen and (max-width: 500px) {
+  .origin {
+    width: 100%;
+  }
+}
+
+.origin .origin__main {
+  width: 60%;
+  margin: 100px auto;
+}
+
+@media screen and (max-width: 500px) {
+  .origin .origin__main {
+    width: 80%;
+  }
+}
+
+.origin .origin__main .origin__main--title {
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 500px) {
+  .origin .origin__main .origin__main--title {
+    font-size: 4rem;
+  }
+}
+
+.origin .origin__main .origin__main--text {
+  letter-spacing: 1.5px;
+  line-height: 2rem;
+}
+
+@media screen and (max-width: 500px) {
+  .origin .origin__main .origin__main--text {
+    line-height: 1.8rem;
+  }
+}
+
+.origin .origin__blocklist {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 500px) {
+  .origin .origin__blocklist {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.origin .origin__blocklist .origin__blocklist__block {
+  width: 30%;
+  padding: 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: solid 1px #000;
+  position: relative;
+}
+
+@media screen and (max-width: 500px) {
+  .origin .origin__blocklist .origin__blocklist__block {
+    width: 80%;
+    margin: 5% auto;
+  }
+}
+
+.origin .origin__blocklist .origin__blocklist__block .origin__blocklist__block--title {
+  padding: 0 2%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: #fff;
+  position: absolute;
+  top: -5%;
+  left: 5%;
+}
+
+.origin .origin__blocklist .origin__blocklist__block .origin__blocklist__block--text {
+  font-size: 0.8rem;
+  letter-spacing: 2.5px;
+  line-height: 2rem;
+}
+
+.japanhistory {
+  width: 80%;
+  margin: 10% auto;
+}
+
+@media screen and (max-width: 500px) {
+  .japanhistory {
+    width: 100%;
+  }
+}
+
+.japanhistory .japanhistory__list--item {
+  width: 80%;
+  margin: 5% auto;
+}
+
+.japanhistory .japanhistory__list--item .japanhistory__list--item--title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 500px) {
+  .japanhistory .japanhistory__list--item .japanhistory__list--item--title {
+    font-size: 1.3rem;
+  }
+}
+
+.japanhistory .japanhistory__list--item .japanhistory__list--text {
+  letter-spacing: 0.5px;
+  line-height: 2.3rem;
+}
+
+.design {
+  width: 80%;
+  margin: 10% auto;
+}
+
+@media screen and (max-width: 500px) {
+  .design {
+    width: 100%;
+  }
+}
+
+.design .design__list--item {
+  width: 80%;
+  margin: 5% auto;
+}
+
+@media screen and (max-width: 500px) {
+  .design .design__list--item {
+    width: 80%;
+  }
+}
+
+.design .design__list--item .design__list--item--title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.design .design__list--item .design__list--text {
+  letter-spacing: 0.5px;
+  line-height: 2.3rem;
+}
+
+.design .design__images {
+  width: 80%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.design .design__images .design__images--img img {
+  width: 100%;
+}
+
+.trivia {
+  width: 80%;
+  margin: 10% auto;
+}
+
+@media screen and (max-width: 500px) {
+  .trivia {
+    width: 100%;
+  }
+}
+
+.trivia .trivia__list--item {
+  width: 80%;
+  margin: 5% auto;
+}
+
+.trivia .trivia__list--item .trivia__list--item--title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.trivia .trivia__list--item .trivia__list--text {
+  letter-spacing: 0.5px;
+  line-height: 2.3rem;
+}
+
+.trivia .trivia__list--item .trivia__list--img {
+  width: 100%;
+}
+
+.footer {
+  width: 80%;
+  margin: 50px auto;
+  text-align: end;
+}
+
+.footer .footer__text {
+  font-size: 0.5rem;
+}
+
+.footer .footer__item {
+  font-size: 0.3rem;
+}
+/*# sourceMappingURL=sub.css.map */

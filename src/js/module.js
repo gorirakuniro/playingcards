@@ -5,7 +5,10 @@ import Mesh from './mesh';
 
 export default class Module {
 	constructor() {
-		this.modulemesh = new Mesh();
+		this.club = new Mesh('./image/club.png');
+		this.heart = new Mesh('./image/heart.png');
+		this.spade = new Mesh('./image/spade.png');
+		this.diamond = new Mesh('./image/diamond.png');
 
 		this.width = window.innerWidth;
 		this.height = window.innerHeight;
@@ -22,13 +25,35 @@ export default class Module {
 
 		this.meshList = [];
 
-		this.mesh = this.modulemesh.mesh;
-		this.scene.add(this.mesh);
-		this.meshList.push(this.mesh);
+		this.clubmesh = this.club.mesh;
+		this.scene.add(this.clubmesh);
+		this.meshList.push(this.clubmesh);
 
-		this.light = new THREE.SpotLight(0xffffff, 4, 30, Math.PI / 4, 10, 0.5);
-		this.light.position.set(10, 15, 30);
-		this.scene.add(this.light);
+		this.heartmesh = this.heart.mesh;
+		this.scene.add(this.heartmesh);
+		this.meshList.push(this.heartmesh);
+
+		this.spademesh = this.spade.mesh;
+		this.scene.add(this.spademesh);
+		this.meshList.push(this.spademesh);
+
+		this.diamondmesh = this.diamond.mesh;
+		this.scene.add(this.diamondmesh);
+		this.meshList.push(this.diamondmesh);
+
+		this.light01 = new THREE.DirectionalLight(0x708090, 1.75);
+		this.light01.position.set(2, 8, 4);
+		this.light02 = new THREE.DirectionalLight(0x708090, 1.75);
+		this.light02.position.set(2, -8, 4);
+		this.light03 = new THREE.DirectionalLight(0x708090, 1.75);
+		this.light03.position.set(2, 8, -4);
+		this.light04 = new THREE.DirectionalLight(0x708090, 1.75);
+		this.light04.position.set(-2, 8, 4);
+
+		this.scene.add(this.light01);
+		this.scene.add(this.light02);
+		this.scene.add(this.light03);
+		this.scene.add(this.light04);
 
 		this.mouse = new THREE.Vector3();
 	}

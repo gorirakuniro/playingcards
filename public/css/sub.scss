@@ -1,0 +1,388 @@
+@font-face {
+	font-family: 'NewYork';
+	src: url(../font/NewYork.ttf);
+}
+
+$breakpoints: (
+  'sm': 'screen and (max-width: 500px)',
+  'md': 'screen and (max-width: 768px)',  
+  'lg': 'screen and (max-width: 1200px)',
+  'xl': 'screen and (max-width: 1400px)', 
+  'xxl': 'screen and (max-width: 1800px)', // MacBook13
+) !default;
+
+@mixin mq($breakpoint: xxl) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+      @content;
+    }
+  }
+  
+
+  body,html{
+      margin: 0;
+     
+  }
+  body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+    display:none;
+}
+
+  a{
+      cursor: pointer;
+  }
+
+.container{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    .header{
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        justify-content: space-between;
+        .header__logo{
+        width: 10%;
+        height: 100%;
+        margin: 0 5%;
+        padding: 30px 0;
+        box-sizing: border-box;
+        @include mq(xxl) {
+            width: 20%;
+            padding: 15px 0;
+         }
+            .title{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .header__nav{
+            width: 30%;
+            height: 100%;
+            display: block;
+            @include mq(sm) {
+                display: none;
+             }
+             @include mq(lg) {
+                width: 40%;
+             }
+            .header_navlist{
+                width: 50%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                list-style: none;
+                @include mq(xxl) {
+                    width: 80%;
+                 }
+                 
+                &-li{
+                    &-link{
+                        text-decoration: none;
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+}
+    
+
+
+//--- what ---//
+.what{
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    @include mq(sm) {
+        flex-direction: column;
+        justify-content: center;
+     }
+    .what__title{
+        width: 50%;
+        height: 20%;
+        position: relative;
+        @include mq(sm) {
+            width: 80%;
+            height: 15%;
+         }
+        .what__title-text{
+            font-weight: 300;
+            font-size: 8rem;
+            font-family: "NewYork";
+            margin: 0;
+            text-align: center;
+            @include mq(sm) {
+                font-size: 5rem;
+             }
+        }
+    }
+    .what__item{
+        width: 50%;
+        height: 10%;
+        @include mq(sm) {
+            width: 50%;
+         }
+        .what__item--title{
+            font-size: 1.5rem;
+            @include mq(sm) {
+                font-size: 1rem;
+             }
+        }
+        .what__item--text{
+            font-size: 0.8rem;
+            letter-spacing: 0.1rem;
+            @include mq(sm) {
+                font-size: 0.5rem;
+             }
+        }
+    }
+}
+
+.listtitle{
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    @include mq(sm) {
+        width: 90%;
+     }
+    &::after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        height: 1px;
+        background: #000;
+        z-index: -1;
+    }
+    .listtitle__item{
+        width: 30%;
+        margin: 0 auto;
+        text-align: center;
+        background: #fff;
+        z-index: 5;
+        @include mq(sm) {
+            width: 60%;
+         }
+        .listtitle__text{
+            font-size: 2.5rem;
+            font-weight: bold;
+            letter-spacing: 0.1rem;
+            @include mq(sm) {
+                font-size: 2rem;
+             }
+        }
+        .listtitle__sub{
+            font-size: 1.5rem;
+            @include mq(sm) {
+                font-size: 1rem;
+             }
+        }
+    }
+}
+
+.game{
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    @include mq(sm) {
+        width: 100%;
+     }
+    .game__list{
+        width: 80%;
+        margin: 0 auto;
+        @include mq(sm) {
+            width: 90%;
+         }
+        .game__list--item{
+            width: 80%;
+            margin: 5% auto;
+            .game__list--item--title{
+                font-size: 2rem;
+                font-weight: 600;
+                margin: 20px 0;
+            }
+            .game__list--text{
+                font-size: 0.8rem;
+                line-height: 2.5rem;
+                letter-spacing: 1px;
+                @include mq(sm) {
+                    line-height: 2rem;
+                 }
+            }
+            .game__list--image{
+                width: 100%;
+                margin: 20px 0;
+            }
+        }
+    }
+}
+
+.origin{
+    width: 80%;
+    margin: 10% auto;
+    @include mq(sm) {
+        width: 100%;
+     }
+    .origin__main{
+        width: 60%;
+        margin: 100px auto;
+        @include mq(sm) {
+            width: 80%;
+         }
+        .origin__main--title{
+            font-size: 5rem;
+            font-weight: bold;
+            @include mq(sm) {
+                font-size: 4rem;
+             }
+        }
+        .origin__main--text{
+            letter-spacing: 1.5px;
+            line-height: 2rem;
+            @include mq(sm) {
+                line-height: 1.8rem;
+             }
+        }
+    }
+    .origin__blocklist{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @include mq(sm) {
+            flex-direction: column;
+         }
+        .origin__blocklist__block{
+            width: 30%;
+            padding: 40px;
+            box-sizing: border-box;
+            border: solid 1px #000;
+            position: relative;
+            @include mq(sm) {
+                width: 80%;
+                margin: 5% auto;
+             }
+            .origin__blocklist__block--title{
+                padding: 0 2%;
+                font-size: 1.5rem;
+                font-weight: bold;
+                background: #fff;
+                position: absolute;
+                top: -5%;
+                left: 5%;
+            }
+            .origin__blocklist__block--text{
+                font-size: 0.8rem;
+                letter-spacing: 2.5px;
+                line-height: 2rem;
+            }
+        }
+    }
+}
+
+.japanhistory{
+    width: 80%;
+    margin: 10% auto;
+    @include mq(sm) {
+        width: 100%;
+     }
+    .japanhistory__list--item{
+        width: 80%;
+        margin: 5% auto;
+
+        .japanhistory__list--item--title{
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+            @include mq(sm) {
+                font-size: 1.3rem;
+             }
+        }
+        .japanhistory__list--text{
+            letter-spacing: 0.5px;
+            line-height: 2.3rem;
+        }
+    }
+}
+
+.design{
+    width: 80%;
+    margin: 10% auto;
+    @include mq(sm) {
+        width: 100%;
+     }
+    .design__list--item{
+        width: 80%;
+        margin: 5% auto;
+        @include mq(sm) {
+            width: 80%;
+         }
+        .design__list--item--title{
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .design__list--text{
+            letter-spacing: 0.5px;
+            line-height: 2.3rem;
+        }
+    }
+    .design__images{
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .design__images--img{
+            img{
+                width: 100%;
+                
+            }
+        }
+    }
+}
+
+.trivia{
+    width: 80%;
+    margin: 10% auto;
+    @include mq(sm) {
+        width: 100%;
+     }
+    .trivia__list--item{
+        width: 80%;
+        margin: 5% auto;
+        .trivia__list--item--title{
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .trivia__list--text{
+            letter-spacing: 0.5px;
+            line-height: 2.3rem;
+        }
+        .trivia__list--img{
+            width: 100%;
+        }
+    }
+    
+}
+
+.footer{
+    width: 80%;
+    margin: 50px auto;
+    text-align: end;
+    .footer__text{
+        font-size: 0.5rem;
+    }
+    .footer__item{
+        font-size: 0.3rem;
+    }
+}

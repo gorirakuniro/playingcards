@@ -1,11 +1,35 @@
+@font-face {
+	font-family: 'NewYork';
+	src: url(../font/NewYork.ttf);
+}
+
+$breakpoints: (
+  'sm': 'screen and (max-width: 500px)',
+  'md': 'screen and (max-width: 768px)',  
+  'lg': 'screen and (max-width: 1200px)',
+  'xl': 'screen and (max-width: 1400px)', 
+  'xxl': 'screen and (max-width: 1800px)', // MacBook13
+) !default;
+
+@mixin mq($breakpoint: xxl) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+      @content;
+    }
+  }
+
 html,body {
     margin: 0;
     padding: 0;
     height: 100vh;
     overflow: hidden;
 }
+
 body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
     display:none;
+}
+
+a{
+    cursor: pointer;
 }
 
 canvas {
@@ -14,9 +38,7 @@ canvas {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 5;
-    // background: #212121;
-    // background: #efefef;
+    z-index: 5; 
 }
 
 .container{
@@ -35,6 +57,11 @@ canvas {
         margin: 0 5%;
         padding: 30px 0;
         box-sizing: border-box;
+        @include mq(xxl) {
+            width: 20%;
+            padding: 15px 0;
+        }
+        
             .title{
                 width: 100%;
                 height: 100%;
@@ -43,6 +70,13 @@ canvas {
         .header__nav{
             width: 30%;
             height: 100%;
+            display: block;
+            @include mq(sm) {
+                display: none;
+             }
+             @include mq(lg) {
+                width: 40%;
+             }
             .header_navlist{
                 width: 50%;
                 height: 100%;
@@ -53,11 +87,14 @@ canvas {
                 justify-content: space-between;
                 align-items: center;
                 list-style: none;
-                
+                @include mq(xxl) {
+                    width: 80%;
+                 }
+                 
                 &-li{
                     &-link{
                         text-decoration: none;
-                        
+                        color: #000;
                     }
                 }
             }
@@ -72,6 +109,9 @@ canvas {
         position: absolute;
         top: 100%;
         left: 50%;
+        @include mq(xxl) {
+            transform: translate(-50%,-50%) scale(1.3) rotate(0deg);
+         }
     }
     .globalnav{
         width: 100%;
@@ -79,17 +119,63 @@ canvas {
         .nav{
             width: 100%;
             height: 100%;
+            // background-color: gold;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
             .nav-item{
                 display: block;
                 width: 20%;
                 height: 60vh;
                 margin: 0 calc((100% - 20%)/2);
-                position: absolute;
-                top: 50%;
-                left: 0;
-                // transform: translate(0,-50%);
-                // background: rgba(0,0,0,0.2);
+                position: relative;
+                top: 40%;
+                text-decoration: none;
+                @include mq(sm) {
+                    width: 60%;
+                    margin: 0 calc((100% - 60%)/2);
+                 }
+                .nav-item-text{
+                    position: absolute;
+                    bottom: -5%;
+                    right: -20%;
+                    font-size: 8rem;
+                    font-family: "NewYork";
+                    color: #000;
+                    text-transform: uppercase;
+                    @include mq(xxl) {
+                        font-size: 5rem;
+                     }
+                }
             }
         }
     }
 }
+
+
+.loading{
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    position: fixed;
+    z-index: 99;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .loading__img{
+        width: 100px;
+        height: 100px;
+        transform: rotate3d(0,0,0);
+    }
+    .loading__text{
+        opacity: 1;
+        transform: translate(0px,0);
+        font-family: "NewYork";
+        margin: 0;
+    }
+}
+
+
