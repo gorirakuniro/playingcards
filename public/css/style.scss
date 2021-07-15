@@ -9,6 +9,7 @@ $breakpoints: (
   'lg': 'screen and (max-width: 1200px)',
   'xl': 'screen and (max-width: 1400px)', 
   'xxl': 'screen and (max-width: 1800px)', // MacBook13
+  'xxol': 'screen and (max-width:3000px)', // Desktop
 ) !default;
 
 @mixin mq($breakpoint: xxl) {
@@ -149,6 +150,39 @@ canvas {
                 }
             }
         }
+    }
+}
+
+.scrollbar{
+    display: none;
+    @include mq(xxol) {
+        display: none;
+     }
+    @include mq(xxl) {
+        display: none;
+     }
+    @include mq(sm) {
+        display: block;
+     }
+    position: fixed;
+    top: 50%;
+    right: 10%;
+    transform: translate(0,-50%);
+    display: block;
+    background: #000;
+    width: 1px;
+    height: 200px;
+    z-index: 10;
+    .scrollbar__track{
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 0%;
+        transform: translate(-50%,0);
+        background: #000;
+        border-radius: 50%;
+        border: 1px solid #000;
+        transition: ease-out 0.4s;
     }
 }
 

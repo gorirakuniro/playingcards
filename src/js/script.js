@@ -124,13 +124,13 @@ navItem[3].addEventListener('mouseleave', () => {
 	diamond_RotateY = 0;
 });
 
-let progress = document.createElement('div');
-let progressBar = document.createElement('div');
+// let progress = document.createElement('div');
+// let progressBar = document.createElement('div');
 
-let manager = new THREE.LoadingManager();
-manager.onProgress = function (item, loaded, total) {
-	progressBar.style.width = (loaded / total) * 100 + '%';
-};
+// let manager = new THREE.LoadingManager();
+// manager.onProgress = function (item, loaded, total) {
+// 	progressBar.style.width = (loaded / total) * 100 + '%';
+// };
 
 function raf() {
 	position += speed;
@@ -168,6 +168,7 @@ function raf() {
 
 	module.mousecursor();
 	module.renderer.render(module.scene, module.camera);
+
 	window.requestAnimationFrame(raf);
 }
 
@@ -185,4 +186,30 @@ function handleMouseMove(event) {
 	// -1〜+1の範囲で現在のマウス座標を登録する
 	module.mouse.x = (x / w) * 2 - 1;
 	module.mouse.y = -(y / h) * 2 + 1;
+}
+
+function touchanime() {
+	TweenMax.from(
+		scrollbar__track,
+		1,
+		{
+			width: '10px',
+			height: '10px',
+			ease: Power2.easeOut,
+		},
+		0.4
+	);
+}
+
+function touchremoveanime() {
+	TweenMax.to(
+		scrollbar__track,
+		1,
+		{
+			width: '20px',
+			height: '20px',
+			ease: Power2.easeOut,
+		},
+		0.4
+	);
 }

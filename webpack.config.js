@@ -9,6 +9,6 @@ module.exports = {
 	devServer: {
 		contentBase: 'public',
 		open: true,
-		host: '0.0.0.0',
+		host: '192.168.0.105',
 	},
 };
